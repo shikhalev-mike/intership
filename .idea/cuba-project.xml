@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CubaProjectState">
+    <option name="hasState" value="true" />
+    <option name="cubaModelState">
+      <CubaModelState>
+        <option name="repositories">
+          <list>
+            <RepositoryModelState>
+              <option name="url" value="https://repo.cuba-platform.com/content/groups/work" />
+              <option name="user" value="cuba" />
+              <option name="pass" value="3r6+CXYTcUs=" />
+              <option name="stateVersion" value="2" />
+            </RepositoryModelState>
+          </list>
+        </option>
+        <option name="appComponents">
+          <list>
+            <DependencyModelState>
+              <option name="group" value="com.haulmont.cuba" />
+              <option name="name" value="cuba-global" />
+              <option name="version" value="7.2.21" />
+            </DependencyModelState>
+          </list>
+        </option>
+        <option name="artifactGroup" value="com.company.intership" />
+        <option name="artifactVersion" value="0.1" />
+        <option name="artifactSnapshot" value="true" />
+        <option name="tomcatDir" value="$PROJECT_DIR$/deploy/tomcat" />
+        <option name="gradleVersion" value="5.6.4" />
+        <option name="oracleSystemCredentials">
+          <map>
+            <entry key="_MAIN_">
+              <value>
+                <OracleSystemCredentialsModelState>
+                  <option name="systemUser" value="system" />
+                  <option name="systemPassword" value="manager" />
+                </OracleSystemCredentialsModelState>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="gradlePluginJarPath" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.haulmont.gradle/cuba-plugin/7.2.21/4d85bc7f159704c6b88e1f85ef193ce93da175ac/cuba-plugin-7.2.21.jar" />
+        <option name="projectPath" value="$PROJECT_DIR$" />
+      </CubaModelState>
+    </option>
+    <option name="dbArtifacts">
+      <map>
+        <entry key="com.haulmont.cuba" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.haulmont.cuba/cuba-core/7.2.21/b69432d229303f07cd663032c3c20a1c3add3476/cuba-core-7.2.21-db.zip" />
+      </map>
+    </option>
+    <option name="gradleFilesCRC" value="1873077193" />
+  </component>
+</project>

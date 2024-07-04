@@ -1,0 +1,11 @@
+04-Jul-2024 14:57:01.505 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/dmt/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-Jul-2024 14:57:02.029 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jul-2024 14:57:02.073 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1012] milliseconds
+04-Jul-2024 14:57:02.189 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jul-2024 14:57:02.190 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+04-Jul-2024 14:57:02.207 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/dmt/IdeaProjects/haulmont/intership/shihalevdev/deploy/tomcat/webapps/app]
+04-Jul-2024 14:57:11.124 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/dmt/IdeaProjects/haulmont/intership/shihalevdev/deploy/tomcat/webapps/app] has finished in [8 916] ms
+04-Jul-2024 14:57:11.125 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/dmt/IdeaProjects/haulmont/intership/shihalevdev/deploy/tomcat/webapps/app-core]
+04-Jul-2024 14:57:17.659 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/dmt/IdeaProjects/haulmont/intership/shihalevdev/deploy/tomcat/webapps/app-core] has finished in [6 534] ms
+04-Jul-2024 14:57:17.664 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jul-2024 14:57:17.676 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [15602] milliseconds
