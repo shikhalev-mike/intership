@@ -1,0 +1,1 @@
+alter table intership_product drop constraint FK_INTERSHIP_PRODUCT_ON_MANUFACTURER ;

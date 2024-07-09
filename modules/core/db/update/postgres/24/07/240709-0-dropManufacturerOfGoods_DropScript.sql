@@ -1,0 +1,1 @@
+drop table if exists INTERSHIP_MANUFACTURER_OF_GOODS__U20199 cascade ;

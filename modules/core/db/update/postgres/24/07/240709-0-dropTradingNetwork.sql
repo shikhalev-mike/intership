@@ -1,0 +1,1 @@
+alter table intership_trading_network rename to INTERSHIP_TRADING_NETWORK__U55750 ;
