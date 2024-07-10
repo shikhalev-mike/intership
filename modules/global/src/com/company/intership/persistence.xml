@@ -2,5 +2,9 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="intership" transaction-type="RESOURCE_LOCAL">
 
+        <class>com.company.intership.entity.CommercialNetwork</class>
+        <class>com.company.intership.entity.Shop</class>
+        <class>com.company.intership.entity.ManufacturerOfGoods</class>
+        <class>com.company.intership.entity.Product</class>
     </persistence-unit>
 </persistence>

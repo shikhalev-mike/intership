@@ -6,8 +6,10 @@
         messagesPack="com.company.intership.web.screens.product">
     <data readOnly="true">
         <collection id="productsDc"
-                    class="com.company.intership.entity.Product" > 
-            <view   extends="_local"><property name="manufacturer" view="_minimal"/></view>
+                    class="com.company.intership.entity.Product">
+            <view extends="_local">
+                <property name="manufacturer" view="_minimal"/>
+            </view>
             <loader id="productsDl">
                 <query>
                     <![CDATA[select e from intership_Product e]]>
@@ -24,41 +26,30 @@
                 dataLoader="productsDl">
             <properties include=".*"/>
         </filter>
-        
-<groupTable id="productsTable"
-        width="100%"
-        dataContainer="productsDc">
-    <actions>
-        <action id="create" type="create"/>
-    
-        <action id="edit" type="edit"/>
-    
-        <action id="remove" type="remove"/>
-    
-    </actions>
-    <columns>
-        <column  id="name"/>
-    
-        <column  id="manufacturerPrice"/>
-    
-        <column  id="manufacturer"/>
-    
-    </columns>
-    <rowsCount/>
-    <buttonsPanel id="buttonsPanel"
-                  alwaysVisible="true">
-        
-            <button id="createBtn" action="productsTable.create"/>                
-        
-            <button id="editBtn" action="productsTable.edit"/>                
-        
-            <button id="removeBtn" action="productsTable.remove"/>                
-        
-    </buttonsPanel>
-</groupTable>
+        <groupTable id="productsTable"
+                    width="100%"
+                    dataContainer="productsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="manufacturerPrice"/>
+                <column id="manufacturer"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="productsTable.create"/>
+                <button id="editBtn" action="productsTable.edit"/>
+                <button id="removeBtn" action="productsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-    </layout>                
+    </layout>
 </window>

@@ -1,0 +1,11 @@
+10-Jul-2024 17:22:59.506 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/elismei/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+10-Jul-2024 17:22:59.808 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Jul-2024 17:22:59.818 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [391] milliseconds
+10-Jul-2024 17:22:59.835 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Jul-2024 17:22:59.835 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+10-Jul-2024 17:22:59.838 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/elismei/haulmont/shihalevdev/deploy/tomcat/webapps/app]
+10-Jul-2024 17:23:01.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/elismei/haulmont/shihalevdev/deploy/tomcat/webapps/app] has finished in [1 966] ms
+10-Jul-2024 17:23:01.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [/Users/elismei/haulmont/shihalevdev/deploy/tomcat/webapps/app-core]
+10-Jul-2024 17:23:03.634 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/elismei/haulmont/shihalevdev/deploy/tomcat/webapps/app-core] has finished in [1 829] ms
+10-Jul-2024 17:23:03.635 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Jul-2024 17:23:03.639 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3820] milliseconds

@@ -1,0 +1,54 @@
+09-Jul-2024 03:26:08.724 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 03:26:08.724 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 03:26:10.150 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 03:26:10.351 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 03:26:10.351 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 03:26:12.059 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:22:44.359 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:22:44.360 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:22:45.910 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:22:46.121 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:22:46.121 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:22:47.841 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:23:10.004 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:23:10.004 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:23:11.493 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:23:11.757 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:23:11.757 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:23:13.664 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:24:31.312 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:24:31.312 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:24:32.822 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:24:33.039 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:24:33.039 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:24:34.981 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:25:39.374 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:25:39.374 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:25:40.887 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:25:41.115 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:25:41.116 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:25:43.028 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:26:08.057 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:26:08.058 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:26:09.620 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:26:09.871 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:26:09.872 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:26:11.748 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:27:01.348 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:27:01.348 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:27:02.892 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:27:03.131 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:27:03.131 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:27:05.022 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:29:52.603 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:29:52.604 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:29:54.120 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:29:54.336 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:29:54.336 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:29:56.141 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'
+09-Jul-2024 04:33:49.765 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:33:49.765 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:33:51.293 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring CubaDispatcherServlet 'dispatcher'
+09-Jul-2024 04:33:51.519 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+09-Jul-2024 04:33:51.519 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing AtmosphereFramework
+09-Jul-2024 04:33:53.260 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring RemotingServlet 'remoting'

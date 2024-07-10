@@ -1,0 +1,58 @@
+Performance Statistics   2024-07-10 17:22:00 - 2024-07-10 17:24:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+MenuItem.intership_CommercialNetwork.browse            120,5          20         221       100,5           2
+MenuItem.intership_ManufacturerOfGoods.browse           94,5          31         158        63,5           2
+MenuItem.intership_Product.browse                       38,0          38          38         0,0           1
+MenuItem.intership_Shop.browse                          59,0          59          59         0,0           1
+intership_CommercialNetwork.browse#afterShow             0,0           0           0         0,0           2
+intership_CommercialNetwork.browse#beforeShow            6,0           3           9         3,0           2
+intership_CommercialNetwork.browse#create                7,0           0          14         7,0           2
+intership_CommercialNetwork.browse#init                  0,0           0           0         0,0           2
+intership_CommercialNetwork.browse#inject                0,0           0           0         0,0           2
+intership_CommercialNetwork.browse#load                 79,5           3         156        76,5           2
+intership_CommercialNetwork.browse#uiPermissions         0,0           0           0         0,0           2
+intership_CommercialNetwork.browse#xml                   2,0           0           4         2,0           2
+intership_ManufacturerOfGoods.browse#afterShow           0,0           0           0         0,0           2
+intership_ManufacturerOfGoods.browse#beforeShow         11,0           4          18         7,0           2
+intership_ManufacturerOfGoods.browse#create              0,5           0           1         0,5           2
+intership_ManufacturerOfGoods.browse#init                0,0           0           0         0,0           2
+intership_ManufacturerOfGoods.browse#inject              0,0           0           0         0,0           2
+intership_ManufacturerOfGoods.browse#load               60,0          11         109        49,0           2
+intership_ManufacturerOfGoods.browse#uiPermissions         0,0           0           0         0,0           2
+intership_ManufacturerOfGoods.browse#xml                 1,0           0           2         1,0           2
+intership_Product.browse#afterShow                       0,0           0           0         0,0           1
+intership_Product.browse#beforeShow                      6,0           6           6         0,0           1
+intership_Product.browse#create                          0,0           0           0         0,0           1
+intership_Product.browse#init                            0,0           0           0         0,0           1
+intership_Product.browse#inject                          0,0           0           0         0,0           1
+intership_Product.browse#load                           10,0          10          10         0,0           1
+intership_Product.browse#uiPermissions                   0,0           0           0         0,0           1
+intership_Product.browse#xml                             2,0           2           2         0,0           1
+intership_Shop.browse#afterShow                          0,0           0           0         0,0           1
+intership_Shop.browse#beforeShow                        14,0          14          14         0,0           1
+intership_Shop.browse#create                             0,0           0           0         0,0           1
+intership_Shop.browse#init                               0,0           0           0         0,0           1
+intership_Shop.browse#inject                             0,0           0           0         0,0           1
+intership_Shop.browse#load                              15,0          15          15         0,0           1
+intership_Shop.browse#uiPermissions                      0,0           0           0         0,0           1
+intership_Shop.browse#xml                                4,0           4           4         0,0           1
+login#afterShow                                          0,0           0           0         0,0           1
+login#beforeShow                                         0,0           0           0         0,0           1
+login#create                                            34,0          34          34         0,0           1
+login#init                                               6,0           6           6         0,0           1
+login#inject                                            11,0          11          11         0,0           1
+login#load                                             129,0         129         129         0,0           1
+login#uiPermissions                                      0,0           0           0         0,0           1
+login#xml                                                3,0           3           3         0,0           1
+main#afterShow                                           2,0           2           2         0,0           1
+main#beforeShow                                          0,0           0           0         0,0           1
+main#create                                              9,0           9           9         0,0           1
+main#init                                                4,0           4           4         0,0           1
+main#inject                                              1,0           1           1         0,0           1
+main#load                                               43,0          43          43         0,0           1
+main#uiPermissions                                       0,0           0           0         0,0           1
+main#xml                                                 0,0           0           0         0,0           1
+
+Performance Statistics   2024-07-10 17:24:00 - 2024-07-10 17:26:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
