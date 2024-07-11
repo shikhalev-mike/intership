@@ -1,7 +1,6 @@
 /.gradle/
 /.idea/
 /deploy/
-/gradle/
 /modules/core/build/
 /modules/global/build/
 /modules/web/build/
