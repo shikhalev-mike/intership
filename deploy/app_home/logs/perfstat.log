@@ -17,3 +17,68 @@ Tag                                                  Avg(ms)         Min        
 Performance Statistics   2024-07-10 17:26:00 - 2024-07-10 17:27:00
 Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
 
+Performance Statistics   2024-07-11 21:04:00 - 2024-07-11 21:05:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                0,7           0           2         0,7          19
+Messages.searchClasspath                                 0,1           0           9         0,7         577
+Messages.searchFiles                                     0,0           0          24         1,0         577
+Metadata.replaceExtendedMetaClasses                      1,0           1           1         0,0           2
+ViewRepository.init.ViewRepositoryClientImpl            17,0          17          17         0,0           1
+ViewRepository.init.ViewRepositoryImpl                  32,0          32          32         0,0           1
+WebJARs                                                 10,0          10          10         0,0           1
+
+Performance Statistics   2024-07-11 21:05:00 - 2024-07-11 21:06:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                0,3           0           2         0,6          15
+Messages.searchClasspath                                 0,0           0           1         0,1         201
+Messages.searchFiles                                     0,0           0           0         0,0         201
+
+Performance Statistics   2024-07-11 21:06:00 - 2024-07-11 21:07:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                0,0           0           0         0,0           7
+
+Performance Statistics   2024-07-11 21:07:00 - 2024-07-11 21:08:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2024-07-11 21:08:00 - 2024-07-11 21:09:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2024-07-11 21:09:00 - 2024-07-11 21:10:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2024-07-11 21:10:00 - 2024-07-11 21:11:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2024-07-11 21:11:00 - 2024-07-11 21:12:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+
+Performance Statistics   2024-07-11 21:13:00 - 2024-07-11 21:14:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                1,1           0           3         0,9          16
+Messages.searchClasspath                                 0,2           0          10         0,9         403
+Messages.searchFiles                                     0,0           0          20         1,0         403
+Metadata.replaceExtendedMetaClasses                      1,5           1           2         0,5           2
+ViewRepository.init.ViewRepositoryImpl                  24,0          24          24         0,0           1
+WebJARs                                                  9,0           9           9         0,0           1
+
+Performance Statistics   2024-07-11 21:14:00 - 2024-07-11 21:15:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                0,9           0           2         1,0           7
+Messages.searchClasspath                                 0,0           0           1         0,1         244
+Messages.searchFiles                                     0,0           0           0         0,0         244
+ViewRepository.init.ViewRepositoryClientImpl            20,0          20          20         0,0           1
+
+Performance Statistics   2024-07-11 21:15:00 - 2024-07-11 21:16:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                0,3           0           2         0,7           6
+Messages.searchClasspath                                 0,0           0           0         0,0         122
+Messages.searchFiles                                     0,0           0           0         0,0         122
+
+Performance Statistics   2024-07-11 21:20:00 - 2024-07-11 21:21:00
+Tag                                                  Avg(ms)         Min         Max     Std Dev       Count
+LoadClass                                                1,1           0           2         0,6          14
+Messages.searchClasspath                                 0,3           0           9         1,3         120
+Messages.searchFiles                                     0,2           0          20         1,8         120
+Metadata.replaceExtendedMetaClasses                      1,0           1           1         0,0           1
+WebJARs                                                 12,0          12          12         0,0           1
+

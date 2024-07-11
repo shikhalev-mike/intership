@@ -16,21 +16,21 @@
                 width="800"/>
     <layout expand="editActions" spacing="true">
         <tabSheet>
-            <tab id="tab" caption="Tab1"/>
-            <tab id="tab_1" caption="Tab2"/>
+            <tab id="tab" caption="msg://editKey">
+                <form id="form" dataContainer="shopDc">
+                    <column width="350px">
+                        <textField id="numberField" property="number"/>
+                        <textField id="nameField" property="name"/>
+                        <pickerField id="commercialNetworkField" property="commercialNetwork">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                    </column>
+                </form>
+            </tab>
         </tabSheet>
-        <form id="form" dataContainer="shopDc">
-            <column width="350px">
-                <textField id="numberField" property="number"/>
-                <textField id="nameField" property="name"/>
-                <pickerField id="commercialNetworkField" property="commercialNetwork">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
-            </column>
-        </form>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>
