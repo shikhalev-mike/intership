@@ -1,0 +1,1 @@
+alter table intership_manufacturer_of_goods rename to INTERSHIP_MANUFACTURER_OF_GOODS__U20199 ;

@@ -1,0 +1,1 @@
+drop table if exists INTERSHIP_TRADING_NETWORK__U55750 cascade ;
