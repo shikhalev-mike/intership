@@ -1,0 +1,3 @@
+alter table INTERSHIP_MANUFACTURER_OF_GOODS add column ADDRESS_HOUSE varchar(255) ;
+alter table INTERSHIP_MANUFACTURER_OF_GOODS add column ADDRESS_STREET varchar(255) ;
+alter table INTERSHIP_MANUFACTURER_OF_GOODS add column ADDRESS_CITY varchar(255) ;

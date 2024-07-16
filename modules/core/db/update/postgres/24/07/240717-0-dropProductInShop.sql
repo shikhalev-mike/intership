@@ -1,0 +1,1 @@
+alter table intership_product_in_shop rename to INTERSHIP_PRODUCT_IN_SHOP__U18027 ;
