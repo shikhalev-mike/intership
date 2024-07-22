@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://priceHistoryBrowse.caption"
+        focusComponent="priceHistoriesTable"
+        messagesPack="com.company.intership.web.screens.pricehistory">
+    <data readOnly="true">
+        <collection id="priceHistoriesDc"
+                    class="com.company.intership.entity.PriceHistory">
+            <view extends="_local">
+                <property name="product" view="_minimal"/>
+                <property name="shop" view="_minimal"/>
+            </view>
+            <loader id="priceHistoriesDl">
+                <query>
+                    <![CDATA[select e from intership_PriceHistory e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="priceHistoriesTable"
+            spacing="true">
+        <groupTable id="priceHistoriesTable"
+                    width="100%"
+                    dataContainer="priceHistoriesDc">
+            <actions>
+            </actions>
+            <columns>
+                <column id="product"/>
+                <column id="shop"/>
+                <column id="priceChangeDate"/>
+                <column id="oldPrice"/>
+                <column id="newPrice"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

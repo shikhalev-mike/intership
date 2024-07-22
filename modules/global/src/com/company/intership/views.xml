@@ -9,9 +9,18 @@
     </view>
     <view entity="intership_Shop" name="shop-view" extends="_local">
         <property name="commercialNetwork" view="_minimal"/>
+        <property name="productsInStore" view="_minimal">
+            <property name="product" view="_minimal"/>
+            <property name="shop" view="_minimal"/>
+            <property name="price"/>
+            <property name="quantity"/>
+        </property>
     </view>
     <view entity="intership_ProductInStore" name="productInStore-view" extends="_local">
-        <property name="product" view="_minimal"/>
+        <property name="product" view="_minimal">
+            <property name="manufacturer" view="_minimal">
+            </property>
+        </property>
         <property name="shop" view="_minimal"/>
     </view>
 </views>
