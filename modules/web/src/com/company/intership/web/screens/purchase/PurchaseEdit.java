@@ -118,9 +118,6 @@ public class PurchaseEdit extends StandardEditor<Purchase> {
                                 editedEntity.setProductInStore(dataContext.merge(productInStore));
                                 list.add(dataContext.merge(editedEntity));
                             }
-
-                            dataContext.commit();
-                            productInPurchasesDl.load();
                         }
                     }
                 })

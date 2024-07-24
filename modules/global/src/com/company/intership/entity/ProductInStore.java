@@ -25,7 +25,8 @@ public class ProductInStore extends StandardEntity {
     @JoinColumn(name = "SHOP_ID")
     private Shop shop;
 
-    @Column(name = "PRICE")
+    @Column(name = "PRICE", nullable = false)
+    @NotNull
     private BigDecimal price;
 
     @Column(name = "QUANTITY", nullable = false)
