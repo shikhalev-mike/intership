@@ -20,7 +20,8 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="productsTable"
-            spacing="true">
+            spacing="true"
+            margin="true">
         <filter id="filter"
                 applyTo="productsTable"
                 dataLoader="productsDl">

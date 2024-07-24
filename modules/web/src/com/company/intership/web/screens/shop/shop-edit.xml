@@ -21,9 +21,9 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout expand="editActions" spacing="true">
+    <layout expand="editActions" spacing="true" margin="true">
         <tabSheet>
-            <tab id="tab" caption="msg://editKey">
+            <tab id="tab" caption="msg://editKey" spacing="true" margin="true">
                 <form id="form" dataContainer="shopDc">
                     <column width="350px">
                         <textField id="numberField" property="number"/>
@@ -37,7 +37,7 @@
                     </column>
                 </form>
             </tab>
-            <tab id="tab_1" caption="Tab" margin="true,false,false,false" spacing="true">
+            <tab id="tab_1" caption="msg://productInStoreEditorKey" margin="true,false,false,false" spacing="true">
                 <groupTable id="productInStoresTable" width="100%" dataContainer="productInStoresDc">
                     <actions>
                         <action id="create" type="create"/>

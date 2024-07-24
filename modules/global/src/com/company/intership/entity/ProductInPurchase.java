@@ -1,11 +1,13 @@
 package com.company.intership.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@PublishEntityChangedEvents
 @Table(name = "INTERSHIP_PRODUCT_IN_PURCHASE")
 @Entity(name = "intership_ProductInPurchase")
 public class ProductInPurchase extends StandardEntity {

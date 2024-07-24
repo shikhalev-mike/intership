@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://purchaseBrowse.caption"
+        focusComponent="purchasesTable"
+        messagesPack="com.company.intership.web.screens.purchase">
+    <data readOnly="true">
+        <collection id="purchasesDc"
+                    class="com.company.intership.entity.Purchase"
+                    view="purchase-view">
+            <loader id="purchasesDl">
+                <query>
+                    <![CDATA[select e from intership_Purchase e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="productInPurchasesDc" class="com.company.intership.entity.ProductInPurchase">
+            <view extends="productInPurchase-view"/>
+            <loader id="productInPurchasesDl">
+                <query>
+                    <![CDATA[select e from intership_ProductInPurchase e where e.purchase = :container_purchasesDc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <split orientation="horizontal" height="100%" width="100%">
+            <vbox spacing="true" margin="true">
+                <groupTable id="purchasesTable"
+                            width="100%"
+                            dataContainer="purchasesDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                    </actions>
+                    <columns>
+                        <column id="shop"/>
+                    </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="purchasesTable.create"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </vbox>
+            <vbox spacing="true" margin="true">
+                <groupBox spacing="true" caption="msg://productsInPurchaseKey">
+                    <groupTable id="productInPurchasesTable" height="100%" width="100%"
+                                dataContainer="productInPurchasesDc">
+                        <columns>
+                            <column id="productInStore.product.name"/>
+                            <column id="price"/>
+                            <column id="quantity"/>
+                        </columns>
+                    </groupTable>
+                </groupBox>
+            </vbox>
+        </split>
+    </layout>
+</window>
