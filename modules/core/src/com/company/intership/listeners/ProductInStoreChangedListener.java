@@ -29,7 +29,7 @@ public class ProductInStoreChangedListener {
                     .one();
             PriceHistory priceHistory = dataManager.create(PriceHistory.class);
             priceHistory.setProduct(productInStore.getProduct());
-            priceHistory.setShop(priceHistory.getShop());
+            priceHistory.setShop(productInStore.getShop());
             priceHistory.setPriceChangeDate(LocalDate.now());
             AttributeChanges changes = event.getChanges();
             if (event.getType() == EntityChangedEvent.Type.UPDATED && changes.isChanged("price")) {

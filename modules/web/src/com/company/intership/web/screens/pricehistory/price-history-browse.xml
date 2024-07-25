@@ -21,7 +21,8 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="priceHistoriesTable"
-            spacing="true">
+            spacing="true"
+            margin="true">
         <groupTable id="priceHistoriesTable"
                     width="100%"
                     dataContainer="priceHistoriesDc">

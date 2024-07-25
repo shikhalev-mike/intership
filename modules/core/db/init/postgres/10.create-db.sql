@@ -130,7 +130,7 @@ create table INTERSHIP_PRODUCT_IN_STORE (
     --
     PRODUCT_ID uuid not null,
     SHOP_ID uuid not null,
-    PRICE decimal(19, 2),
+    PRICE decimal(19, 2) not null,
     QUANTITY integer not null,
     --
     primary key (ID)

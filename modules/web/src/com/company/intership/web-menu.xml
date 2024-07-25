@@ -11,7 +11,7 @@
                   caption="mainMsg://menu_config.intership_ManufacturerOfGoods.browse"/>
             <item screen="intership_Product.browse" caption="mainMsg://menu_config.intership_Product.browse"/>
         </menu>
-        <item screen="intership_ProductInStore.browse" caption="mainMsg://menu_config.intership_ProductInStore.browse"/>
         <item screen="intership_PriceHistory.browse" caption="mainMsg://menu_config.intership_PriceHistory.browse"/>
+        <item screen="intership_Purchase.browse" caption="mainMsg://menu_config.intership_Purchase.browse"/>
     </menu>
 </menu-config>

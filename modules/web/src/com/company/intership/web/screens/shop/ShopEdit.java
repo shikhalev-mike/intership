@@ -32,14 +32,17 @@ public class ShopEdit extends StandardEditor<Shop> {
     private DataContext dataContext;
 
     @Install(to = "productInStoresTable.create", subject = "initializer")
-    protected void ProductInStoreTableCreateInitializer(ProductInStore entity) {
-        entity.setShop(getEditedEntity());
+    private void ProductInStoreTableCreateInitializer(ProductInStore productInStore) {
+        productInStore.setShop(getEditedEntity());
     }
 
     @Subscribe("productInStoresTable.create")
     public void onProductInStoresTableCreate(Action.ActionPerformedEvent event) {
         ProductInStoreEdit screen = screenBuilders.editor(ProductInStore.class, this)
                 .newEntity()
+                .withInitializer(productInStores -> {
+                    productInStores.setShop(getEditedEntity());
+                })
                 .withScreenClass(ProductInStoreEdit.class)
                 .withParentDataContext(dataContext)
                 .withAfterCloseListener(afterCloseEvent -> {
@@ -49,11 +52,11 @@ public class ShopEdit extends StandardEditor<Shop> {
                         boolean isDuplicate = false;
                         for (ProductInStore p : list) {
                             if (p.getProduct().equals(productInStore.getProduct())) {
-                                p.setQuantity(p.getQuantity()+productInStore.getQuantity());
-                                isDuplicate=true;
+                                p.setQuantity(p.getQuantity() + productInStore.getQuantity());
+                                isDuplicate = true;
                             }
                         }
-                        if (isDuplicate){
+                        if (isDuplicate) {
                             dataContext.remove(productInStore);
                         } else {
                             list.add(productInStore);
@@ -62,6 +65,4 @@ public class ShopEdit extends StandardEditor<Shop> {
                 }).build();
         screen.show();
     }
-
-
 }
