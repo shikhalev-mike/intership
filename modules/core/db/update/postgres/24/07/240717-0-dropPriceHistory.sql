@@ -1,0 +1,1 @@
+alter table intership_price_history rename to INTERSHIP_PRICE_HISTORY__U28971 ;

@@ -1,0 +1,1 @@
+drop table if exists INTERSHIP_PRICE_HISTORY__U28971 cascade ;

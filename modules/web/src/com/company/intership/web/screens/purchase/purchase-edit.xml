@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://purchaseEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.intership.web.screens.purchase">
+    <data>
+        <instance id="purchaseDc"
+                  class="com.company.intership.entity.Purchase"
+                  view="purchase-view">
+            <loader/>
+        </instance>
+        <collection id="productInPurchasesDc" class="com.company.intership.entity.ProductInPurchase">
+            <view extends="productInPurchase-view"/>
+            <loader id="productInPurchasesDl">
+                <query>
+                    <![CDATA[select e from intership_ProductInPurchase e where e.purchase = :container_purchaseDc]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="productInPurchaseDc" class="com.company.intership.entity.ProductInPurchase">
+            <view extends="_local"/>
+            <loader id="productInPurchaseDl"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout margin="true" expand="editActions" spacing="true">
+        <groupBox spacing="true" visible="true" caption="msg://productInPurchaseKey">
+            <vbox spacing="true">
+                <groupTable id="productInPurchasesTable" height="100%" width="100%" dataContainer="productInPurchasesDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <buttonsPanel alwaysVisible="true">
+                        <button id="productInPurchasesTableCreateBtn" action="productInPurchasesTable.create"/>
+                        <button id="productInPurchasesTableEditBtn" action="productInPurchasesTable.edit"/>
+                        <button id="productInPurchasesTableRemoveBtn" action="productInPurchasesTable.remove"/>
+                    </buttonsPanel>
+                    <columns>
+                        <column id="productInStore.product.name"/>
+                        <column id="price"/>
+                        <column id="quantity"/>
+                    </columns>
+                    <rowsCount/>
+                </groupTable>
+            </vbox>
+        </groupBox>
+        <form id="form" dataContainer="purchaseDc">
+            <column width="350px">
+                <pickerField id="shopField" property="shop">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

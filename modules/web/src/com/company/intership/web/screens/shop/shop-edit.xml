@@ -11,12 +11,19 @@
             </view>
             <loader/>
         </instance>
+        <collection id="productInStoresDc" class="com.company.intership.entity.ProductInStore"
+                    view="productInStore-view">
+            <loader id="productInStoresDl">
+                <query><![CDATA[select e from intership_ProductInStore e where e.shop = :container_shopDc]]></query>
+            </loader>
+        </collection>
     </data>
-    <dialogMode height="600"
-                width="800"/>
-    <layout expand="editActions" spacing="true">
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout expand="editActions" spacing="true" margin="true">
         <tabSheet>
-            <tab id="tab" caption="msg://editKey">
+            <tab id="tab" caption="msg://editKey" spacing="true" margin="true">
                 <form id="form" dataContainer="shopDc">
                     <column width="350px">
                         <textField id="numberField" property="number"/>
@@ -29,6 +36,26 @@
                         </pickerField>
                     </column>
                 </form>
+            </tab>
+            <tab id="tab_1" caption="msg://productInStoreEditorKey" margin="true,false,false,false" spacing="true">
+                <groupTable id="productInStoresTable" width="100%" dataContainer="productInStoresDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <buttonsPanel alwaysVisible="true">
+                        <button id="productInStoresTableCreateBtn" action="productInStoresTable.create"/>
+                        <button id="productInStoresTableEditBtn" action="productInStoresTable.edit"/>
+                        <button id="productInStoresTableRemoveBtn" action="productInStoresTable.remove"/>
+                    </buttonsPanel>
+                    <columns>
+                        <column id="product"/>
+                        <column id="shop"/>
+                        <column id="price"/>
+                        <column id="quantity"/>
+                    </columns>
+                </groupTable>
             </tab>
         </tabSheet>
         <hbox id="editActions" spacing="true">

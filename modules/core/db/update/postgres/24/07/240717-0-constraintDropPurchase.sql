@@ -1,0 +1,1 @@
+alter table intership_product_in_purchase drop constraint FK_INTERSHIP_PRODUCT_IN_PURCHASE_ON_PURCHASE ;

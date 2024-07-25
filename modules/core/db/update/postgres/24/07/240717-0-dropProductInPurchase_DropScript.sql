@@ -1,0 +1,1 @@
+drop table if exists INTERSHIP_PRODUCT_IN_PURCHASE__U17014 cascade ;
