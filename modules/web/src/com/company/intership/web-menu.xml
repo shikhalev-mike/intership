@@ -13,5 +13,7 @@
         </menu>
         <item screen="intership_PriceHistory.browse" caption="mainMsg://menu_config.intership_PriceHistory.browse"/>
         <item screen="intership_Purchase.browse" caption="mainMsg://menu_config.intership_Purchase.browse"/>
+        <item screen="intership_ManufacturerScreen" caption="mainMsg://menu_config.intership_ManufacturerScreen"/>
+        <item screen="intership_ShopScreen" caption="mainMsg://menu_config.intership_ShopScreen"/>
     </menu>
 </menu-config>

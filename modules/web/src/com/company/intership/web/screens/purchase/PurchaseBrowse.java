@@ -14,20 +14,4 @@ import javax.inject.Inject;
 @LookupComponent("purchasesTable")
 @LoadDataBeforeShow
 public class PurchaseBrowse extends StandardLookup<Purchase> {
-    @Inject
-    private GroupTable<ProductInPurchase> productInPurchasesTable;
-
-    @Subscribe
-    public void onInit(InitEvent event) {
-        productInPurchasesTable.setVisible(false);
-    }
-
-    @Subscribe("purchasesTable")
-    public void onPurchasesTableSelection(Table.SelectionEvent<Purchase> event) {
-        if (event.getSelected().size() == 1) {
-            Purchase purchase = event.getSelected().iterator().next();
-            productInPurchasesTable.setVisible(true);
-        }
-    }
-
 }

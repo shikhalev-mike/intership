@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://shopScreen.caption"
+        messagesPack="com.company.intership.web.screens">
+    <data>
+        <collection id="purchasesDc" class="com.company.intership.entity.Purchase" view="purchase-view">
+            <loader id="purchasesDl">
+                <query>
+                    <![CDATA[select e from intership_Purchase e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="purchasesDc1" class="com.company.intership.entity.Purchase" view="purchase-view">
+            <loader id="purchasesDl1">
+                <query>
+                    <![CDATA[select e from intership_Purchase e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout spacing="true">
+        <tabSheet id="tabSheet" width="100%" height="100%">
+            <tab id="tab1" caption="msg://searchInStoreKey" margin="true,false,false,false" spacing="true">
+                <vbox spacing="true">
+                    <hbox spacing="true">
+                        <pickerField id="shopPicker" width="300px" metaClass="intership_Shop"
+                                     caption="msg://shopPicker.caption">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <button id="updateBtn" align="BOTTOM_LEFT" width="100px" primary="true" caption="msg://updateBtn.caption"/>
+                    </hbox>
+                    <groupTable id="purchasesTable" width="100%" dataContainer="purchasesDc"
+                                caption="msg://purchasesTable.caption">
+                        <columns>
+                            <column id="shop"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </tab>
+            <tab id="tab" caption="msg://searchInNetworkKey" margin="true,false,false,false" spacing="true">
+                <vbox spacing="true">
+                    <hbox spacing="true">
+                        <pickerField id="commercialNetworkPicker" width="300px" metaClass="intership_CommercialNetwork"
+                                     caption="msg://commercialNetworkPicker.caption">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <button id="updateBtn1" align="BOTTOM_LEFT" width="100px" primary="true" caption="msg://updateBtn.caption"/>
+                    </hbox>
+                    <groupTable id="purchasesTable2" width="100%" dataContainer="purchasesDc1"
+                                caption="msg://purchasesTable.caption">
+                        <columns>
+                            <column id="shop"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </tab>
+        </tabSheet>
+    </layout>
+</window>
