@@ -23,8 +23,10 @@ public class ManufacturerOfGoodsServiceBean implements ManufacturerOfGoodsServic
     public List<ProductInStore> getProductsByManufacturerInStore(ManufacturerOfGoods manufacturerOfGoods, Shop shop
             , int maxQuantity) {
         return dataManager.load(ProductInStore.class)
-                .query("select p from intership_ProductInStore pis join pis.product p " +
-                        "where p.manufacturer.id = :manufacturerId and pis.shop.id = :shopId " +
+                .query("select pis from intership_ProductInStore pis " +
+                        "join pis.product p " +
+                        "where p.manufacturer.id = :manufacturerId " +
+                        "and pis.shop.id = :shopId " +
                         "and (pis.quantity <= :maxQuantity or pis.quantity = 0)")
                 .parameter("manufacturerId", manufacturerOfGoods.getId())
                 .parameter("shopId", shop.getId())
@@ -37,7 +39,8 @@ public class ManufacturerOfGoodsServiceBean implements ManufacturerOfGoodsServic
     public List<ProductInStore> getProductsByManufacturerInAllStores(ManufacturerOfGoods manufacturerOfGoods
             , int maxQuantity) {
         return dataManager.load(ProductInStore.class)
-                .query("select p from intership_ProductInStore pis join pis.product p " +
+                .query("select pis from intership_ProductInStore pis " +
+                        "join pis.product p " +
                         "where p.manufacturer.id = :manufacturerId " +
                         "and (pis.quantity <= :maxQuantity or pis.quantity = 0)")
                 .parameter("manufacturerId", manufacturerOfGoods.getId())

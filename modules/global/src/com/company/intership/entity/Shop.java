@@ -12,7 +12,7 @@ import java.util.List;
 
 @Table(name = "INTERSHIP_SHOP")
 @Entity(name = "intership_Shop")
-@NamePattern("%s %s|name,number")
+@NamePattern("%s|name")
 public class Shop extends StandardEntity {
     private static final long serialVersionUID = -5757899352020371634L;
 

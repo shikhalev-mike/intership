@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://manufacturerScreen.caption"
+        messagesPack="com.company.intership.web.screens">
+    <data>
+        <collection id="productInStoresDc" class="com.company.intership.entity.ProductInStore"
+                    view="productInStore-view">
+            <loader id="productInStoresDl">
+                <query>
+                    <![CDATA[select e from intership_ProductInStore e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="productInStoresDc1" class="com.company.intership.entity.ProductInStore"
+                    view="productInStore-view">
+            <loader id="productInStoresDl1">
+                <query>
+                    <![CDATA[select e from intership_ProductInStore e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="shopsDc" class="com.company.intership.entity.Shop" view="shop-view">
+            <loader id="shopsDl">
+                <query>
+                    <![CDATA[select e from intership_Shop e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout spacing="true">
+        <tabSheet id="tabSheet" width="100%" height="100%">
+            <tab id="tab1" caption="msg://productsInStoreSearchKey" margin="true,false,false,false" spacing="true">
+                <vbox spacing="true">
+                    <hbox spacing="true">
+                        <pickerField id="shopPicker" width="300px" metaClass="intership_Shop"
+                                     caption="msg://shopPicker.caption_1">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <pickerField id="manufacturerPicker" width="300px" metaClass="intership_ManufacturerOfGoods"
+                                     caption="msg://manufacturerPicker.caption">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <textField id="maxQuantityField" width="300px" caption="msg://maxQuantityField.caption"/>
+                        <button id="updateBtn" align="BOTTOM_LEFT" width="100px" primary="true" caption="msg://updateBtn.caption"/>
+                    </hbox>
+                    <groupTable id="productInStoresTable" width="100%"
+                                dataContainer="productInStoresDc" caption="msg://productInStoresTable1.caption">
+                        <columns>
+                            <column id="product"/>
+                            <column id="shop"/>
+                            <column id="price"/>
+                            <column id="quantity"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </tab>
+            <tab id="tab" caption="msg://productInAllStoresSearch" margin="true,false,false,false" spacing="true">
+                <vbox spacing="true">
+                    <hbox spacing="true">
+                        <pickerField id="manufacturerPicker1" width="300px" metaClass="intership_ManufacturerOfGoods"
+                                     caption="msg://manufacturerPicker1.caption">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <textField id="maxQuantityField1" width="300px" caption="msg://maxQuantityField1.caption"/>
+                        <button id="updateBtn1" align="BOTTOM_LEFT" width="100px" primary="true" caption="msg://updateBtn.caption"/>
+                    </hbox>
+                    <groupTable id="productInStoresTable1" width="100%" dataContainer="productInStoresDc1"
+                                caption="msg://productInStoresTable1.caption">
+                        <columns>
+                            <column id="product"/>
+                            <column id="shop"/>
+                            <column id="price"/>
+                            <column id="quantity"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </tab>
+            <tab id="tab_1" caption="msg://storesWithoutProductKey" margin="true,false,false,false" spacing="true">
+                <vbox spacing="true">
+                    <hbox spacing="true">
+                        <pickerField id="productPicker" width="300px" metaClass="intership_Product"
+                                     caption="msg://productPicker.caption">
+                            <actions>
+                                <action id="lookup" type="picker_lookup"/>
+                                <action id="clear" type="picker_clear"/>
+                            </actions>
+                        </pickerField>
+                        <button id="updateBtn2" align="BOTTOM_LEFT" width="100px" primary="true" caption="msg://updateBtn.caption"/>
+                    </hbox>
+                    <groupTable id="shopsTable" width="100%" dataContainer="shopsDc" caption="msg://shopsTable.caption">
+                        <columns>
+                            <column id="number"/>
+                            <column id="shopType"/>
+                            <column id="name"/>
+                            <column id="commercialNetwork"/>
+                        </columns>
+                    </groupTable>
+                </vbox>
+            </tab>
+        </tabSheet>
+    </layout>
+</window>
