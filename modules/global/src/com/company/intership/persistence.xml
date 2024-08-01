@@ -11,5 +11,10 @@
         <class>com.company.intership.entity.ProductInStore</class>
         <class>com.company.intership.entity.ProductInPurchase</class>
         <class>com.company.intership.entity.PriceHistory</class>
+        <class>com.company.intership.entity.ExtUser</class>
+        <class>com.company.intership.entity.Buyer</class>
+        <class>com.company.intership.entity.NaturalPerson</class>
+        <class>com.company.intership.entity.JuridicalPerson</class>
+        <class>com.company.intership.entity.OnlineOrder</class>
     </persistence-unit>
 </persistence>

@@ -45,4 +45,5 @@
             <property name="quantity"/>
         </property>
     </view>
+    <view entity="intership_OnlineOrder" name="onlineOrder-view" extends="_local"/>
 </views>
