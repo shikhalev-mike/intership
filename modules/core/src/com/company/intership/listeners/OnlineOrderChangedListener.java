@@ -26,7 +26,7 @@ public class OnlineOrderChangedListener {
             OnlineOrder onlineOrder = txDm.load(event.getEntityId())
                     .view("onlineOrder-view")
                     .one();
-            onlineOrder.setNumber(String.valueOf(uniqueNumbersAPI.getNextNumber(onlineOrder.toString())));
+            onlineOrder.setNumber(String.valueOf(uniqueNumbersAPI.getNextNumber("orderNumberSequence")));
             txDm.save(onlineOrder);
         }
     }
