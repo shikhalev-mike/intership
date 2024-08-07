@@ -203,5 +203,5 @@ create table INTERSHIP_JURIDICAL_PERSON (
 -- end INTERSHIP_JURIDICAL_PERSON
 -- begin SEC_USER
 alter table SEC_USER add column DTYPE varchar(31) ^
-update SEC_USER set DTYPE = 'sec$User' where DTYPE is null ^
+update SEC_USER set DTYPE = 'intership_ExtUser' where DTYPE is null ^
 -- end SEC_USER

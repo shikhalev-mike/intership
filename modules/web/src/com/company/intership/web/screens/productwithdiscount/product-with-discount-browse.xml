@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://productWithDiscountBrowse.caption"
+        focusComponent="productWithDiscountsTable"
+        messagesPack="com.company.intership.web.screens.productwithdiscount">
+    <data readOnly="true">
+        <collection id="productWithDiscountsDc"
+                    class="com.company.intership.entity.ProductWithDiscount">
+            <view extends="_local">
+                <property name="product" view="_minimal"/>
+                <property name="price"/>
+                <property name="priceWithDiscount"/>
+            </view>
+            <loader id="productWithDiscountsDl">
+                <query>
+                    <![CDATA[select e from intership_ProductWithDiscount e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="productWithDiscountsDc1" class="com.company.intership.entity.ProductWithDiscount">
+            <view extends="_local"/>
+            <loader id="productWithDiscountsDl1">
+                <query>
+                    <![CDATA[select e from intership_ProductWithDiscount e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <split orientation="horizontal" height="100%" width="100%">
+            <vbox spacing="true" margin="true">
+                <groupTable id="productWithDiscountsTable"
+                            width="100%"
+                            dataContainer="productWithDiscountsDc">
+                    <actions>
+                    </actions>
+                    <columns>
+                        <column id="product"/>
+                        <column id="shop"/>
+                        <column id="price"/>
+                        <column id="priceWithDiscount"/>
+                    </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="generateBtn" caption="msg://generate"/>
+                        <button id="addBtn" caption="msg://addToCart"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </vbox>
+            <vbox spacing="true" margin="true">
+                <groupBox spacing="true"  caption="msg://cart">
+                    <groupTable id="productInCartTable" width="100%"
+                                dataContainer="productWithDiscountsDc1">
+                        <columns>
+                            <column id="product"/>
+                            <column id="shop"/>
+                        </columns>
+                        <rowsCount/>
+                        <buttonsPanel id="buttonsPanel1"
+                                      alwaysVisible="true">
+                            <button id="delBtn" caption="msg://removeFromCart"/>
+                        </buttonsPanel>
+                    </groupTable>
+                    <hbox id="lookupActions1" spacing="true" visible="false">
+                        <button action="lookupSelectAction"/>
+                        <button action="lookupCancelAction"/>
+                    </hbox>
+                </groupBox>
+            </vbox>
+        </split>
+    </layout>
+</window>

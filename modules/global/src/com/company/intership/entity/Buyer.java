@@ -1,5 +1,6 @@
 package com.company.intership.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.EmbeddedParameters;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Entity(name = "intership_Buyer")
 @DiscriminatorColumn(name = "DTYPE", discriminatorType = DiscriminatorType.STRING)
 @Inheritance(strategy = InheritanceType.JOINED)
+@NamePattern("%s|fullName")
 public class Buyer extends StandardEntity {
     private static final long serialVersionUID = 5125514391475726388L;
 

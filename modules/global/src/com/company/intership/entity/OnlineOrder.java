@@ -2,12 +2,14 @@ package com.company.intership.entity;
 
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
+import com.haulmont.cuba.core.global.DbView;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@PublishEntityChangedEvents
+@DbView
 @Entity(name = "intership_OnlineOrder")
+@PublishEntityChangedEvents
 public class OnlineOrder extends Purchase {
     private static final long serialVersionUID = 1919316582231062618L;
 

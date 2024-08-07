@@ -10,6 +10,7 @@ import java.util.List;
 
 @Table(name = "INTERSHIP_PURCHASE")
 @Entity(name = "intership_Purchase")
+@DiscriminatorColumn(name = "DTYPE", discriminatorType = DiscriminatorType.STRING)
 public class Purchase extends StandardEntity {
     private static final long serialVersionUID = 8169769622421857829L;
 
