@@ -1,10 +1,8 @@
 package com.company.intership.web.screens.purchase;
 
-import com.company.intership.entity.ProductInPurchase;
-import com.company.intership.entity.ProductInStore;
-import com.company.intership.entity.Shop;
+import com.company.intership.entity.*;
 import com.company.intership.web.screens.productinpurchase.ProductInPurchaseEdit;
-import com.haulmont.cuba.core.global.TransactionalAction;
+import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.actions.list.CreateAction;
@@ -16,18 +14,22 @@ import com.haulmont.cuba.gui.components.PickerField;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.DataContext;
+import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.*;
-import com.company.intership.entity.Purchase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
+import java.util.Objects;
 
 @UiController("intership_Purchase.edit")
 @UiDescriptor("purchase-edit.xml")
 @EditedEntityContainer("purchaseDc")
 @LoadDataBeforeShow
 public class PurchaseEdit extends StandardEditor<Purchase> {
+    private static final Logger log = LoggerFactory.getLogger(PurchaseEdit.class);
     @Inject
     private PickerField<Shop> shopField;
     @Inject
@@ -48,12 +50,30 @@ public class PurchaseEdit extends StandardEditor<Purchase> {
     private CreateAction<ProductInPurchase> productInPurchasesTableCreate;
     @Inject
     private CollectionLoader<ProductInPurchase> productInPurchasesDl;
+    @Inject
+    private DataManager dataManager;
+
+    @Subscribe(id = "productInPurchasesDc", target = Target.DATA_CONTAINER)
+    public void onProductInPurchasesDcItemChange(InstanceContainer.ItemChangeEvent<ProductInPurchase> event) {
+        log.info(String.valueOf(Objects.requireNonNull(event.getItem()).getPurchase()));
+    }
 
     @Subscribe
     public void onInit(InitEvent event) {
         productInPurchasesTableCreate.setEnabled(false);
         productInPurchasesTableEdit.setEnabled(false);
         productInPurchasesTableRemove.setEnabled(false);
+    }
+
+    @Subscribe
+    public void onBeforeCommitChanges(BeforeCommitChangesEvent event) {
+        if (!(getEditedEntity() instanceof OnlineOrder)) {
+            List<ProductInPurchase> list = productInPurchasesDc.getMutableItems();
+            for (ProductInPurchase p : list) {
+                ProductInStore productInStore = p.getProductInStore();
+                productInStore.setQuantity(productInStore.getQuantity() - p.getQuantity());
+            }
+        }
     }
 
     @Subscribe("shopField")
@@ -75,48 +95,30 @@ public class PurchaseEdit extends StandardEditor<Purchase> {
                 .withAfterCloseListener(afterCloseEvent -> {
                     if (afterCloseEvent.closedWith(StandardOutcome.COMMIT)) {
                         ProductInPurchase editedEntity = afterCloseEvent.getScreen().getEditedEntity();
-                        if (editedEntity.getQuantity() <= 0) {
-                            afterCloseEvent.closedWith(StandardOutcome.DISCARD);
+                        ProductInStore productInStore = editedEntity.getProductInStore();
+
+                        if (editedEntity.getQuantity() > productInStore.getQuantity()) {
+                            notifications.create()
+                                    .withCaption(productInStore.getProduct().getName()
+                                            + " - не хватает товара")
+                                    .withType(Notifications.NotificationType.HUMANIZED)
+                                    .show();
                         } else {
-                            ProductInStore productInStore = editedEntity.getProductInStore();
-
-                            boolean isDuplicate = false;
-                            List<ProductInPurchase> list = productInPurchasesDc.getMutableItems();
-                            for (ProductInPurchase p : list) {
-                                if (p.getProductInStore().getProduct().equals(productInStore.getProduct())) {
-                                    if (productInStore.getQuantity() > editedEntity.getQuantity()) {
-                                        p.setQuantity(p.getQuantity() + editedEntity.getQuantity());
-                                        p.getProductInStore().setQuantity(p.getProductInStore().getQuantity() - editedEntity.getQuantity());
-                                    } else {
-                                        p.setQuantity(productInStore.getQuantity());
-                                        p.getProductInStore().setQuantity(0);
-                                        notifications.create()
-                                                .withCaption(productInStore.getProduct().getName() + " - товар закончился")
-                                                .withType(Notifications.NotificationType.HUMANIZED)
-                                                .show();
-                                    }
-                                    dataContext.remove(editedEntity);
-                                    isDuplicate = true;
-                                }
-                            }
-
-                            if (!isDuplicate) {
-                                if (productInStore.getQuantity() > editedEntity.getQuantity()) {
-                                    productInStore.setQuantity(productInStore.getQuantity() - editedEntity.getQuantity());
-                                } else {
-                                    editedEntity.setQuantity(productInStore.getQuantity());
-                                    productInStore.setQuantity(0);
+                            if (getDuplicate(editedEntity) != null) {
+                                ProductInPurchase p = getDuplicate(editedEntity);
+                                assert p != null;
+                                if ((p.getQuantity() + editedEntity.getQuantity()) > productInStore.getQuantity()) {
                                     notifications.create()
-                                            .withCaption(productInStore.getProduct().getName() + " - товар закончился")
+                                            .withCaption(productInStore.getProduct().getName()
+                                                    + " - не хватает товара")
                                             .withType(Notifications.NotificationType.HUMANIZED)
                                             .show();
+                                } else {
+                                    p.setQuantity(p.getQuantity() + editedEntity.getQuantity());
+                                    dataContext.remove(editedEntity);
                                 }
-
-                                editedEntity.setPurchase(getEditedEntity());
-                                editedEntity.setPrice(productInStore.getPrice());
-
-                                editedEntity.setProductInStore(dataContext.merge(productInStore));
-                                list.add(dataContext.merge(editedEntity));
+                            } else {
+                                productInPurchasesDc.getMutableItems().add(dataContext.merge(editedEntity));
                             }
                         }
                     }
@@ -124,5 +126,14 @@ public class PurchaseEdit extends StandardEditor<Purchase> {
                 .build();
         screen.setPurchase(getEditedEntity());
         screen.show();
+    }
+
+    private ProductInPurchase getDuplicate(ProductInPurchase productInPurchase) {
+        for (ProductInPurchase p : productInPurchasesDc.getMutableItems()) {
+            if (p.getProductInStore().equals(productInPurchase.getProductInStore())) {
+                return p;
+            }
+        }
+        return null;
     }
 }

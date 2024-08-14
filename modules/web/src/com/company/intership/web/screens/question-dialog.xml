@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://questionDialog.caption"
+        messagesPack="com.company.intership.web.screens">
+
+    <dialogMode height="auto"
+                width="400"
+                forceDialog="true"/>
+
+    <layout expand="buttonsBox"
+            spacing="true"
+            margin="true">
+        <label id="questionLabel" value="msg://createPersonOffer"/>
+
+        <hbox id="buttonsBox"
+              spacing="true">
+            <popupButton id="popupButton" caption="msg://create" description="Press me">
+                <actions>
+                    <action id="popupAction1" caption="msg://naturalPerson"/>
+                    <action id="popupAction2" caption="msg://juridicalPerson"/>
+                </actions>
+            </popupButton>
+            <button id="cancelButton"
+                    caption="msg://dialogs.Cancel"/>
+        </hbox>
+    </layout>
+</window>

@@ -14,6 +14,8 @@
                 <entry key="intership_ManufacturerOfGoodsService"
                        value="com.company.intership.service.ManufacturerOfGoodsService"/>
                 <entry key="intership_ShopService" value="com.company.intership.service.ShopService"/>
+                <entry key="intership_BuyerWithUserService" value="com.company.intership.service.BuyerWithUserService"/>
+                <entry key="intership_ProductService" value="com.company.intership.service.ProductService"/>
             </map>
         </property>
     </bean>

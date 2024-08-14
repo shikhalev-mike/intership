@@ -28,8 +28,8 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <split orientation="horizontal" height="100%" width="100%">
-            <vbox spacing="true" margin="true">
+        <split id="mainSplit" orientation="horizontal" height="100%" width="100%">
+            <vbox id="leftVBox" spacing="true" margin="true">
                 <groupTable id="purchasesTable"
                             width="100%"
                             dataContainer="purchasesDc">
@@ -42,7 +42,12 @@
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
-                        <button id="createBtn" action="purchasesTable.create"/>
+                        <popupButton id="popupButton" caption="msg://create" description="Press me">
+                            <actions>
+                                <action id="popupAction1" caption="msg://purchase"/>
+                                <action id="popupAction2" caption="msg://onlineOrder"/>
+                            </actions>
+                        </popupButton>
                     </buttonsPanel>
                 </groupTable>
                 <hbox id="lookupActions" spacing="true" visible="false">
@@ -50,7 +55,7 @@
                     <button action="lookupCancelAction"/>
                 </hbox>
             </vbox>
-            <vbox spacing="true" margin="true">
+            <vbox id="productInPurchaseBox" spacing="true" margin="true">
                 <groupBox spacing="true" caption="msg://productsInPurchaseKey">
                     <groupTable id="productInPurchasesTable" height="100%" width="100%"
                                 dataContainer="productInPurchasesDc">
@@ -60,6 +65,19 @@
                             <column id="quantity"/>
                         </columns>
                     </groupTable>
+                </groupBox>
+                <groupBox id="onlineOrderInfoBox" spacing="true" caption="msg://onlineOrderInfo" visible="false">
+                    <form id="onlineOrderForm">
+                        <column width="250px">
+                            <textField id="customerField" property="buyer" caption="msg://buyer" editable="false"/>
+                            <textField id="orderNumberField" property="number" caption="msg://orderNumber"
+                                       editable="false"/>
+                            <textField id="totalAmountField" property="orderAmount" caption="msg://orderAmount"
+                                       editable="false"/>
+                            <textField id="discountField" property="discount" caption="msg://discount"
+                                       editable="false"/>
+                        </column>
+                    </form>
                 </groupBox>
             </vbox>
         </split>

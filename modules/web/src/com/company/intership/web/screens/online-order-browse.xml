@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:ext="http://schemas.haulmont.com/cuba/window-ext.xsd"
+        extends="com/company/intership/web/screens/purchase/purchase-browse.xml"
+        messagesPack="com.company.intership.web.screens">
+    <data>
+        <!-- Определение коллекции и загрузчика для онлайн заказов -->
+        <collection id="onlineOrderDc" class="com.company.intership.entity.OnlineOrder">
+            <view extends="onlineOrder-view"/>
+            <loader id="onlineOrderDl">
+                <query>
+                    <![CDATA[select e from intership_OnlineOrder e where e.purchase = :container_purchasesDc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <split id="mainSplit">
+            <vbox id="productInPurchaseBox">
+                <vbox id="onlineOrderInfo">
+                    <label>some</label>
+                </vbox>
+                <groupBox>
+                    <groupTable id="productInPurchasesTable">
+                        <columns>
+                            <column id="productInStore.product.name"/>
+                            <column id="price"/>
+                            <column id="quantity"/>
+                        </columns>
+                    </groupTable>
+                </groupBox>
+            </vbox>
+        </split>
+    </layout>
+</window>

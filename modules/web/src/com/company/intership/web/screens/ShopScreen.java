@@ -1,14 +1,11 @@
 package com.company.intership.web.screens;
 
 import com.company.intership.entity.CommercialNetwork;
-import com.company.intership.entity.ProductInPurchase;
 import com.company.intership.entity.Purchase;
 import com.company.intership.entity.Shop;
 import com.company.intership.service.ShopService;
 import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.components.PickerField;
-import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;

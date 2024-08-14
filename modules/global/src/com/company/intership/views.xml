@@ -26,24 +26,38 @@
         <property name="product" view="_minimal"/>
         <property name="shop" view="_minimal"/>
     </view>
-    <view entity="intership_ProductInPurchase" name="productInPurchase-view" extends="_local">
-        <property name="purchase" view="_minimal"/>
+    <view entity="intership_ProductInPurchase" name="productInPurchase-view" extends="_base">
+        <property name="purchase" view="_minimal">
+        </property>
         <property name="productInStore" view="_minimal">
             <property name="quantity"/>
             <property name="price"/>
             <property name="shop" view="_minimal"/>
         </property>
     </view>
-    <view entity="intership_Purchase" name="purchase-view" extends="_local">
-        <property name="shop" view="_minimal"/>
+    <view entity="intership_Purchase" name="purchase-view" extends="_base">
+        <property name="shop" view="_minimal">
+            <property name="productsInStore" view="_minimal">
+                <property name="quantity"/>
+            </property>
+        </property>
         <property name="productsInPurchase" view="_minimal">
             <property name="purchase" view="_minimal"/>
             <property name="productInStore" view="_minimal">
-                <property name="product" view="_minimal"/>
+                <property name="quantity"/>
             </property>
             <property name="price"/>
             <property name="quantity"/>
         </property>
     </view>
-    <view entity="intership_OnlineOrder" name="onlineOrder-view" extends="_local"/>
+    <view entity="intership_OnlineOrder" name="onlineOrder-view" extends="_local">
+        <property name="buyer" view="_minimal"/>
+        <property name="orderAmount"/>
+        <property name="shop" view="_minimal"/>
+        <property name="productsInPurchase" view="_minimal">
+            <property name="productInStore" view="_minimal"/>
+            <property name="price"/>
+        </property>
+    </view>
+    <view entity="intership_ExtUser" name="extUser-view" extends="user.browse"/>
 </views>

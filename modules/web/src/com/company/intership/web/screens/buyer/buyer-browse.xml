@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://buyerBrowse.caption"
+        focusComponent="buyersTable"
+        messagesPack="com.company.intership.web.screens.buyer">
+    <data readOnly="true">
+        <collection id="buyersDc"
+                    class="com.company.intership.entity.Buyer">
+            <view extends="_local">
+                <property name="user" view="_minimal"/>
+                <property name="address" view="_minimal">
+                    <property name="city"/>
+                    <property name="street"/>
+                    <property name="house"/>
+                </property>
+            </view>
+            <loader id="buyersDl">
+                <query>
+                    <![CDATA[select e from intership_Buyer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="buyersTable"
+            spacing="true">
+        <groupTable id="buyersTable"
+                    width="100%"
+                    dataContainer="buyersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="fullName"/>
+                <column id="user"/>
+                <column id="address.city"/>
+                <column id="address.street"/>
+                <column id="address.house"/>
+                <column id="email"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <popupButton id="popupButton" caption="msg://create" description="Press me">
+                    <actions>
+                        <action id="popupAction1" caption="msg://naturalPerson"/>
+                        <action id="popupAction2" caption="msg://juridicalPerson"/>
+                    </actions>
+                </popupButton>
+                <button id="editBtn" action="buyersTable.edit"/>
+                <button id="removeBtn" action="buyersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

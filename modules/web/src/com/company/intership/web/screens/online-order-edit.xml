@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd" messagesPack="com.company.intership.web.screens"
+        xmlns:ext="http://schemas.haulmont.com/cuba/window-ext.xsd"
+        extends="com/company/intership/web/screens/purchase/purchase-edit.xml">
+    <layout>
+        <form id="form">
+            <column>
+                <textField id="buyerField" caption="msg://buyer" editable="false"/>
+                <textField id="totalAmountField" caption="msg://orderAmount" editable="false"/>
+                <textField id="discountField" caption="msg://discount"/>
+                <button id="discointButton" caption="msg://getDiscount"/>
+            </column>
+        </form>
+    </layout>
+</window>

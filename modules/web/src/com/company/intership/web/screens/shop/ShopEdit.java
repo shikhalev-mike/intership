@@ -2,15 +2,9 @@ package com.company.intership.web.screens.shop;
 
 import com.company.intership.entity.ProductInStore;
 import com.company.intership.web.screens.productinstore.ProductInStoreEdit;
-import com.haulmont.cuba.core.global.DataManager;
-import com.haulmont.cuba.core.global.LoadContext;
 import com.haulmont.cuba.gui.ScreenBuilders;
-import com.haulmont.cuba.gui.builders.EditorClassBuilder;
 import com.haulmont.cuba.gui.components.Action;
-import com.haulmont.cuba.gui.components.GroupTable;
-import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.model.CollectionContainer;
-import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.DataContext;
 import com.haulmont.cuba.gui.screen.*;
 import com.company.intership.entity.Shop;
