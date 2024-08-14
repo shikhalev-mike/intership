@@ -2,7 +2,6 @@ package com.company.intership.web.screens.buyer;
 
 import com.company.intership.entity.JuridicalPerson;
 import com.company.intership.entity.NaturalPerson;
-import com.company.intership.entity.ProductInStore;
 import com.company.intership.web.screens.juridicalperson.JuridicalPersonEdit;
 import com.company.intership.web.screens.naturalperson.NaturalPersonEdit;
 import com.haulmont.cuba.gui.ScreenBuilders;

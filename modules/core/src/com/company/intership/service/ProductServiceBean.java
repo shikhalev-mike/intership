@@ -1,6 +1,5 @@
 package com.company.intership.service;
 
-import com.company.intership.entity.Product;
 import com.company.intership.entity.ProductInStore;
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Service;

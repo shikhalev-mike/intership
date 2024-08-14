@@ -3,7 +3,6 @@ package com.company.intership.web.screens;
 import com.company.intership.service.BuyerWithUserService;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.app.security.user.edit.UserEditor;
-import com.haulmont.cuba.gui.model.DataContext;
 import com.haulmont.cuba.gui.screen.OpenMode;
 import com.haulmont.cuba.gui.screen.Screen;
 

@@ -1,13 +1,11 @@
 package com.company.intership.web.screens.purchase;
 
 import com.company.intership.entity.*;
-import com.company.intership.web.screens.OnlineOrderEdit;
-import com.company.intership.web.screens.naturalperson.NaturalPersonEdit;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.Metadata;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.*;
-import com.haulmont.cuba.gui.model.CollectionContainer;
+import com.haulmont.cuba.gui.model.DataContext;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.gui.screen.LookupComponent;
 
@@ -38,6 +36,8 @@ public class PurchaseBrowse extends StandardLookup<Purchase> {
     private TextField<String> discountField;
     @Inject
     private TextField<String> customerField;
+    @Inject
+    private DataContext dataContext;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -70,13 +70,13 @@ public class PurchaseBrowse extends StandardLookup<Purchase> {
 
     @Subscribe("popupButton.popupAction1")
     public void onPopupButtonPopupAction1(Action.ActionPerformedEvent event) {
-        Purchase purchase = metadata.create(Purchase.class);
+        Purchase purchase = dataManager.create(Purchase.class);
         showCreateEditor(purchase);
     }
 
     @Subscribe("popupButton.popupAction2")
     public void onPopupButtonPopupAction2(Action.ActionPerformedEvent event) {
-        OnlineOrder onlineOrder = metadata.create(OnlineOrder.class);
+        OnlineOrder onlineOrder = dataManager.create(OnlineOrder.class);
         showCreateEditor(onlineOrder);
     }
 

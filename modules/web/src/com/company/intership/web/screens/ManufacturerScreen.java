@@ -2,16 +2,10 @@ package com.company.intership.web.screens;
 
 import com.company.intership.entity.*;
 import com.company.intership.service.ManufacturerOfGoodsService;
-import com.company.intership.service.ShopService;
-import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.HasValue;
 import com.haulmont.cuba.gui.components.PickerField;
 import com.haulmont.cuba.gui.components.TextField;
 import com.haulmont.cuba.gui.model.CollectionContainer;
-import com.haulmont.cuba.gui.model.CollectionLoader;
-import com.haulmont.cuba.gui.model.InstanceContainer;
-import com.haulmont.cuba.gui.model.InstanceLoader;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;

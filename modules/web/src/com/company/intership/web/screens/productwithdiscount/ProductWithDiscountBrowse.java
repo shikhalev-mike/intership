@@ -1,11 +1,9 @@
 package com.company.intership.web.screens.productwithdiscount;
 
-import com.company.intership.entity.OnlineOrder;
 import com.company.intership.entity.ProductInStore;
 import com.company.intership.service.ProductService;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.DataContext;

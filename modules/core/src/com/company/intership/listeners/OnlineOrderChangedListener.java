@@ -4,7 +4,6 @@ import com.company.intership.entity.OnlineOrder;
 
 import java.util.UUID;
 
-import com.haulmont.cuba.core.TransactionalDataManager;
 import com.haulmont.cuba.core.app.UniqueNumbersAPI;
 import com.haulmont.cuba.core.app.events.EntityChangedEvent;
 import com.haulmont.cuba.core.global.DataManager;
@@ -17,7 +16,6 @@ import org.springframework.transaction.event.TransactionalEventListener;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.inject.Inject;
-import javax.persistence.EntityTransaction;
 
 @Component("intership_OnlineOrderChangedListener")
 public class OnlineOrderChangedListener {

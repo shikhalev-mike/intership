@@ -6,8 +6,6 @@ import com.haulmont.cuba.security.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-import java.util.List;
-import java.util.Map;
 
 @Service(BuyerWithUserService.NAME)
 public class BuyerWithUserServiceBean implements BuyerWithUserService {

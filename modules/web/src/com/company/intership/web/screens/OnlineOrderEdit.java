@@ -1,7 +1,6 @@
 package com.company.intership.web.screens;
 
 import com.company.intership.entity.Buyer;
-import com.company.intership.entity.ExtUser;
 import com.company.intership.entity.OnlineOrder;
 import com.company.intership.entity.ProductInPurchase;
 import com.company.intership.service.BuyerWithUserService;
@@ -60,27 +59,31 @@ public class OnlineOrderEdit extends PurchaseEdit {
     @Subscribe("discointButton")
     public void onDiscointButtonClick(Button.ClickEvent event) {
         int discount = -1;
-        try {
-            discount = Integer.parseInt(Objects.requireNonNull(discountField.getValue()));
-            ((OnlineOrder) getEditedEntity()).setDiscount(discount);
-        } catch (NumberFormatException e) {
+        if (discountField.getValue() != null) {
+            try {
+                discount = Integer.parseInt(Objects.requireNonNull(discountField.getValue()));
+                ((OnlineOrder) getEditedEntity()).setDiscount(discount);
+            } catch (NumberFormatException e) {
+                discountField.setValue("0");
+                ((OnlineOrder) getEditedEntity()).setDiscount(discount);
+            }
+            if (discount > 0 && discount < 100) {
+                ((OnlineOrder) getEditedEntity()).setDiscount(discount);
+                BigDecimal disc = BigDecimal.valueOf(discount);
+                disc = disc.divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+                BigDecimal amount = BigDecimal.
+                        valueOf(Double
+                                .parseDouble(String
+                                        .valueOf(Objects
+                                                .requireNonNull(((OnlineOrder) getEditedEntity()).getOrderAmount()))));
+
+
+                amount = amount.subtract(amount.multiply(disc));
+                ((OnlineOrder) getEditedEntity()).setOrderAmount(amount);
+                totalAmountField.setValue(amount.toString());
+            }
+        } else {
             discountField.setValue("0");
-            ((OnlineOrder) getEditedEntity()).setDiscount(discount);
-        }
-        if (discount > 0 && discount < 100) {
-            ((OnlineOrder) getEditedEntity()).setDiscount(discount);
-            BigDecimal disc = BigDecimal.valueOf(discount);
-            disc = disc.divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
-            BigDecimal amount = BigDecimal.
-                    valueOf(Double
-                            .parseDouble(String
-                                    .valueOf(Objects
-                                            .requireNonNull(((OnlineOrder) getEditedEntity()).getOrderAmount()))));
-
-
-            amount = amount.subtract(amount.multiply(disc));
-            ((OnlineOrder) getEditedEntity()).setOrderAmount(amount);
-            totalAmountField.setValue(amount.toString());
         }
     }
 }

@@ -1,16 +1,15 @@
 package com.company.intership.web.screens;
 
 import com.company.intership.entity.ExtUser;
-import com.company.intership.entity.JuridicalPerson;
 import com.company.intership.entity.NaturalPerson;
 import com.company.intership.service.BuyerWithUserService;
 import com.haulmont.cuba.gui.app.security.user.browse.UserBrowser;
 import com.haulmont.cuba.gui.screen.MessageBundle;
-import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.security.entity.User;
 
 import javax.inject.Inject;
 import java.util.Collection;
+import java.util.Map;
 
 public class ExtUserBrowser extends UserBrowser {
     @Inject
@@ -18,17 +17,19 @@ public class ExtUserBrowser extends UserBrowser {
     @Inject
     private MessageBundle messageBundle;
 
-    @Subscribe
-    public void onBeforeShow(BeforeShowEvent event) {
-        usersDs.refresh();
-        Collection<User> list = usersDs.getItems();
-        list.forEach(user -> {
-            if (buyerWithUserService.isBuyerWithUserService(user)) {
-                ((ExtUser) user).setBuyerInfo(typeOfUser((ExtUser) user) + " " + buyerWithUserService
-                        .getBuyerByUserId(user)
-                        .getFullName());
-                usersDs.setItem(user);
-            }
+    @Override
+    public void init(Map<String, Object> params) {
+        usersDs.addCollectionChangeListener(collectionChangeEvent -> {
+            usersDs.refresh();
+            Collection<User> list = usersDs.getItems();
+            list.forEach(user -> {
+                if (buyerWithUserService.isBuyerWithUserService(user)) {
+                    ((ExtUser) user).setBuyerInfo(typeOfUser((ExtUser) user) + " " + buyerWithUserService
+                            .getBuyerByUserId(user)
+                            .getFullName());
+                    usersDs.setItem(user);
+                }
+            });
         });
     }
 
