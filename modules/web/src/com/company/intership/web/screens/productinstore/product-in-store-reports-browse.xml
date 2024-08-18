@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://productInStoreReportsBrowse.caption"
+        focusComponent="productInStoresTable"
+        messagesPack="com.company.intership.web.screens.productinstore">
+    <data readOnly="true">
+        <collection id="productInStoresDc"
+                    class="com.company.intership.entity.ProductInStore">
+            <view extends="_local">
+                <property name="product" view="_minimal"/>
+                <property name="shop" view="_minimal"/>
+            </view>
+            <loader id="productInStoresDl">
+                <query>
+                    <![CDATA[select e from intership_ProductInStore e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="productInStoresTable"
+            spacing="true">
+        <groupTable id="productInStoresTable"
+                    width="100%"
+                    dataContainer="productInStoresDc">
+            <actions>
+            </actions>
+            <columns>
+                <column id="product"/>
+                <column id="shop"/>
+                <column id="price"/>
+                <column id="quantity"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
