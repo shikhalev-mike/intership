@@ -24,6 +24,10 @@ public class Shop extends StandardEntity {
     @OneToMany(mappedBy = "shop")
     private List<ProductInStore> productsInStore;
 
+    @OneToMany(mappedBy = "shop")
+    @OnDelete(DeletePolicy.CASCADE)
+    private List<Employee> employees;
+
     @Column(name = "SHOP_TYPE")
     private String shopType;
 
@@ -44,6 +48,14 @@ public class Shop extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "COMMERCIAL_NETWORK_ID")
     private CommercialNetwork commercialNetwork;
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
     public ShopType getShopType() {
         return shopType == null ? null : ShopType.fromId(shopType);

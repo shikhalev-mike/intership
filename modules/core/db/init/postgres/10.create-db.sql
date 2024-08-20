@@ -205,3 +205,20 @@ create table INTERSHIP_JURIDICAL_PERSON (
 alter table SEC_USER add column DTYPE varchar(31) ^
 update SEC_USER set DTYPE = 'intership_ExtUser' where DTYPE is null ^
 -- end SEC_USER
+-- begin INTERSHIP_EMPLOYEE
+create table INTERSHIP_EMPLOYEE (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SHOP_ID uuid not null,
+    USER_ID uuid not null,
+    --
+    primary key (ID)
+)^
+-- end INTERSHIP_EMPLOYEE

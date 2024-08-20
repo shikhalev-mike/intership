@@ -16,5 +16,6 @@
         <class>com.company.intership.entity.NaturalPerson</class>
         <class>com.company.intership.entity.JuridicalPerson</class>
         <class>com.company.intership.entity.OnlineOrder</class>
+        <class>com.company.intership.entity.Employee</class>
     </persistence-unit>
 </persistence>
