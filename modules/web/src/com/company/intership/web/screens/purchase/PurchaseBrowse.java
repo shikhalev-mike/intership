@@ -37,7 +37,7 @@ public class PurchaseBrowse extends StandardLookup<Purchase> {
     @Inject
     private TextField<String> customerField;
     @Inject
-    private DataContext dataContext;
+    private TextField<String> statusField;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -61,6 +61,7 @@ public class PurchaseBrowse extends StandardLookup<Purchase> {
                     orderNumberField.setValue(fullyLoadedOrder.getNumber());
                     discountField.setValue(fullyLoadedOrder.getDiscount().toString());
                     customerField.setValue(fullyLoadedOrder.getBuyer().getFullName());
+                    statusField.setValue(fullyLoadedOrder.getStatus().toString());
                 } else {
                     onlineOrderInfoBox.setVisible(false);
                 }

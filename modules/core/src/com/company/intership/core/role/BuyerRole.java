@@ -16,6 +16,7 @@ import com.haulmont.reports.entity.charts.AbstractChartDescription;
 public class BuyerRole extends AnnotatedRoleDefinition {
     public final static String NAME = "Buyer";
 
+    @EntityAccess(entityClass = Product.class, operations = EntityOp.READ)
     @EntityAccess(entityClass = Buyer.class, operations = EntityOp.READ)
     @EntityAccess(entityClass = Address.class, operations = EntityOp.READ)
     @EntityAccess(entityClass = ProductInStore.class, operations = {EntityOp.READ, EntityOp.UPDATE})
@@ -29,6 +30,7 @@ public class BuyerRole extends AnnotatedRoleDefinition {
         return super.entityPermissions();
     }
 
+    @EntityAttributeAccess(entityClass = Product.class, view = {"name", "manufacturer"})
     @EntityAttributeAccess(entityClass = Buyer.class, view = "fullName")
     @EntityAttributeAccess(entityClass = Shop.class, view = {"name", "address"})
     @EntityAttributeAccess(entityClass = Address.class, view = "*")

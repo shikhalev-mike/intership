@@ -152,6 +152,7 @@ create table INTERSHIP_PURCHASE (
     --
     -- from intership_OnlineOrder
     NUMBER_ varchar(255),
+    STATUS varchar(50),
     BUYER_ID uuid,
     DISCOUNT integer,
     --
