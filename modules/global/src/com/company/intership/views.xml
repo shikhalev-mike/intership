@@ -55,9 +55,16 @@
         <property name="orderAmount"/>
         <property name="shop" view="_minimal"/>
         <property name="productsInPurchase" view="_minimal">
-            <property name="productInStore" view="_minimal"/>
+            <property name="productInStore" view="_minimal">
+                <property name="quantity"/>
+            </property>
             <property name="price"/>
+            <property name="quantity"/>
         </property>
     </view>
     <view entity="intership_ExtUser" name="extUser-view" extends="user.browse"/>
+    <view entity="intership_Employee" name="employee-view" extends="_local">
+        <property name="user" view="_minimal"/>
+        <property name="shop" view="_minimal"/>
+    </view>
 </views>

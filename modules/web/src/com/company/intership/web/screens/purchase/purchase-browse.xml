@@ -76,6 +76,8 @@
                                        editable="false"/>
                             <textField id="discountField" property="discount" caption="msg://discount"
                                        editable="false"/>
+                            <textField id="statusField" property="status" caption="msg://status"
+                                       editable="false"/>
                         </column>
                     </form>
                 </groupBox>

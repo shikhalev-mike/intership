@@ -1,5 +1,6 @@
 package com.company.intership.web.screens;
 
+import com.company.intership.entity.OnlineOrder;
 import com.company.intership.entity.Purchase;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.components.VBoxLayout;
@@ -24,9 +25,7 @@ public class OnlineOrderBrowse extends PurchaseBrowse {
     public void onInit(InitEvent event) {
         purchasesTable.addSelectionListener(selectionEvent -> {
             Purchase selected = purchasesTable.getSingleSelected();
-            if ("OnlineOrder.class".equals(selected.getClass())) {
-                onlineOrderInfo.setVisible(true);
-            }
+            onlineOrderInfo.setVisible(selected instanceof OnlineOrder);
         });
     }
     
